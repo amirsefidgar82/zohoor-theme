@@ -1,0 +1,37 @@
+:root{
+    --fa-primary-color: rgb(83, 83, 83);
+    --fa-secondary-color: rgb(146, 146, 146);
+}
+html{
+    direction: rtl;
+}
+
+*{
+    font-family: 'iransans';
+}
+
+header{
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.logo{
+    width: 40%;
+}
+
+.mobile-menu h5{
+    font-weight: 900;
+}
+
+ul{
+    padding: 0 !important;
+}
+
+li{
+list-style-type: none;
+margin: 1.5rem 0;
+}
