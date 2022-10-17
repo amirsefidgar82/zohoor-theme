@@ -2,11 +2,9 @@
     --fa-primary-color: rgb(83, 83, 83);
     --fa-secondary-color: rgb(146, 146, 146);
 }
-html{
-    direction: rtl;
-}
 
 *{
+    direction: rtl;
     font-family: 'iransans';
 }
 
@@ -19,19 +17,45 @@ header{
 }
 
 
-.logo{
+.logo-img{
     width: 40%;
 }
-
-.mobile-menu h5{
+.offcanvas-title{
     font-weight: 900;
-}
-
-ul{
-    padding: 0 !important;
 }
 
 li{
 list-style-type: none;
 margin: 1.5rem 0;
+}
+.login-btn{
+    width: 100%;
+}
+.left-header{
+    width: 20%;
+}
+.larg-menu{
+    display: none;
+}
+/* tablet */
+@media only screen and (min-width:480px){
+    .logo-img{
+        width: 20%;
+    }
+}
+/* small screens (Laptop) */
+@media only screen and (min-width:768px){
+    .logo-img{
+        width: 20%;
+    }
+    .mobile-menu{
+        display: none;
+    }
+    .larg-menu{
+        display: block;
+    }
+    li{
+        display: inline-block;
+        margin: .5rem;
+    }
 }

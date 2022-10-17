@@ -12,43 +12,53 @@
   </head>
   <body>
     <header>
-      <div class="mobile-menu">
-        <a
-          data-bs-toggle="offcanvas"
-          href="#offcanvasExample"
-          role="button"
-          aria-controls="offcanvasExample"
-        >
-          <i class="fa-duotone fa-bars fa-2xl"></i>
-        </a>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">منو</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <div class="menus">
+        <div class="mobile-menu">
+          <a
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample"
+            role="button"
+            aria-controls="offcanvasExample"
+          >
+            <i class="fa-duotone fa-bars fa-2xl"></i>
+          </a>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">منو</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+  
+              <ul>
+                <li>خانه</li>
+                <li>ثبت سفارش</li>
+                <li>پیگیری سفارش</li>
+                <li>کد رهگیری</li>
+                <li>درباره ما </li>
+                <li>نظرات مشتریان</li>
+              </ul>
+              
+            </div>
           </div>
-          <div class="offcanvas-body">
-
-            <ul>
-              <li>خانه</li>
-              <li>ثبت سفارش</li>
-              <li>پیگیری سفارش</li>
-              <li>کد رهگیری</li>
-              <li>درباره ما </li>
-              <li>نظرات مشتریان</li>
-            </ul>
-            
-          </div>
+          
         </div>
-        
+        <div class="larg-menu">
+          <ul>
+            <li>خانه</li>
+            <li>ثبت سفارش</li>
+            <li>پیگیری سفارش</li>
+          </ul>
+        </div>
       </div>
+      
 
       <img
         src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png"
-        class="logo"
+        class="logo-img"
       />
       <div class="left-header">
-        <button class="btn btn-primary"">ورود</button>
-        <!-- <i class="fa-duotone fa-basket-shopping fa-2xl"></i> -->
+        <!-- <button class="btn btn-primary login-btn">ورود</button> -->
+        <i class="fa-duotone fa-basket-shopping fa-2xl"></i>
       </div>
     </header>
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
