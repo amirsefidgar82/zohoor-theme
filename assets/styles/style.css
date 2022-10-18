@@ -28,34 +28,31 @@ li{
 list-style-type: none;
 margin: 1.5rem 0;
 }
-.login-btn{
-    width: 100%;
-}
-.left-header{
-    width: 20%;
-}
-.larg-menu{
+
+.md-menu{
     display: none;
 }
 /* tablet */
-@media only screen and (min-width:480px){
-    .logo-img{
-        width: 20%;
-    }
-}
-/* small screens (Laptop) */
 @media only screen and (min-width:768px){
-    .logo-img{
-        width: 20%;
-    }
-    .mobile-menu{
+    .sm-buttons-container{
         display: none;
     }
-    .larg-menu{
+    .md-menu{
         display: block;
+    }
+    .sm-menu{
+        display: none;
     }
     li{
         display: inline-block;
         margin: .5rem;
     }
+    .logo-img{
+        width: 20%;
+    }
+    .login-btn,
+    .fa-basket-shopping{
+        margin: 0 1rem;
+    }
+    
 }
