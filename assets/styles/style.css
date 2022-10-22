@@ -38,35 +38,34 @@ main {
     height: 80vh;
 }
 footer{
-    background-color: cadetblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 50px 50px 0 0;
-    padding: 1rem;
-}
-.namads{
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-}
-.namad{
-    width: 40%;
-    height: 40%;
-    margin: .5rem;
-    border-radius: 20px;
-}
-.accordion{
-    margin: 2rem .5rem;
-}
-.accordions{
-    display: flex;
     flex-direction: column;
+    background-color: cadetblue;
+    border-radius: 50px 50px 0 0;
+    padding: 1rem;
+    position: relative;
 }
-.accordion-button{
-    background-color: aqua;
+
+.socials > i{
+    margin: .5rem;
+    font-size: 1.3rem;
+}
+footer > *{
+    margin-bottom: 3rem;
+}
+.info{
+    font-size: .8rem;
+}
+
+.namad{
+    background-color: wheat;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    margin-bottom: 0;
 }
 /* tablet */
 @media only screen and (min-width:768px) {
@@ -94,21 +93,5 @@ footer{
     .login-btn,
     .fa-basket-shopping {
         margin: 0 1rem;
-    }
-
-    footer{
-        flex-direction: row;
-    }
-    .namads{
-        width: 30%;
-        height: fit-content;
-    }
-    .accordion{
-        width: 100%;
-    }
-    .accordions{
-        display: flex;
-        flex-direction: row;
-        width: 70%;
     }
 }
