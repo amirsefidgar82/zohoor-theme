@@ -9,7 +9,7 @@
 }
 
 header {
-    background-color: bisque;
+    background-color: #1C4F40;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +29,9 @@ li {
     list-style-type: none;
     margin: 1.5rem 0;
 }
-
+footer li{
+color: white;
+}
 .md-menu {
     display: none;
 }
@@ -41,18 +43,22 @@ footer{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: cadetblue;
+    background-color: #2C2C2C;
     border-radius: 50px 50px 0 0;
     padding: 1rem;
     position: relative;
+    color: rgb(202, 202, 202);
 }
-
+.restname{
+    text-align: center;
+}
 .socials > i{
     margin: .5rem;
     font-size: 1.3rem;
 }
 footer > *{
     margin-bottom: 3rem;
+    
 }
 .info{
     font-size: .8rem;
