@@ -43,8 +43,7 @@
                     <li>پیگیری سفارش</li>
                     <!-- <i class="fa-duotone fa-basket-shopping fa-xl"></i> -->
                 </ul>
-                <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
-
+                <button class="btn btn-primary login-btn mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
             </div>
             <!------------------------------ Modal login and sign in-------------------------------]  -->
             <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,14 +55,12 @@
                         </div>
                         <div class="modal-body">
                             <h1 class="h3 titel-sign"><strong>ورود</strong> یا <strong>عضویت</strong></h1>
-                            <form id="post-form">
-                                <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber">شماره تلفن همراه</label>
-                                <input class="form-control form-control-lg text-start font-weight-light " onchange="check_input()" name="phone" type="tel" id="validation-phonenumber" minlength="12" maxlength="12">
+                            <form id="post-form py-4 my-3">
+                                <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber mt-3">شماره تلفن همراه</label>
+                                <input class="form-control form-control-lg text-start font-weight-light my-2" ononline="check_input_send_phonenumber()" name="phone" type="tel" id="validation-phonenumber" minlength="12" maxlength="12">
                                 <label for="validation-phonenumber" id="label_input_phonenumber" class="form-label mt-2 label-input-phonenumber">شماره با 9 0 شروع می‌شود</label>
                                 <button class="d-none" id="btn-hide" data-bs-target="#exampleModalToggle2" type="button" data-bs-toggle="modal"></button>
-
-                                <button onclick="send_ponenumber()" type="button" class="btn btn-secondary col-12 p-3 text-white" id="btnSend">ادامه</button>
-
+                                <button onclick="send_ponenumber()" type="button" class="btn btn-secondary col-12 p-3 text-white mt-5" id="btnSend">ادامه</button>
                             </form>
 
                         </div>
@@ -89,7 +86,7 @@
                                     <i class="fa-solid fa-edit "></i> اصلاح شماره
                                 </div>
 
-                                <input id="import_code" class="form-control form-control-lg text-start  mt-4" type="text">
+                                <input id="import_code" onchange="check_input_send_code()" class="form-control form-control-lg text-start  mt-4" type="text">
                                 <div class="d-flex justify-content-center mt-3 label-input-phonenumber" id="timer_send_retern">
                                     <div class="py-2" id="wait_countdown_timer">
                                         <p class="me-1 d-inline" id="p_timer"></p>
@@ -99,16 +96,13 @@
                                         ارسال مجدد کد
                                     </p>
                                 </div>
-
-
-                                <p class="h7 text-center h7">
+                                <p class="text-center mt-3" style="font-size:0.9rem ;">
                                     ثبت نام در اسنپ‌فود به منزله پذیرش همه قوانین و شرایط استفاده است.
-
                                 </p>
                             </form>
                         </div>
                         <div class="modal-footer border-0">
-                            <button type="button" onclick="send_code()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-secondary col-12 btn p-3 btn-light bg-secondary text-white ">ورود</button>
+                            <button id="btn_send_code" type="button" onclick="send_code()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-secondary col-12 btn p-3  text-white ">ورود</button>
                         </div>
                     </div>
                 </div>
