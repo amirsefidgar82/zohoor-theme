@@ -16,9 +16,8 @@ header {
     padding: 1rem;
 }
 
-
 .logo-img {
-    width: 40%;
+    width: 30%;
 }
 
 .offcanvas-title {
@@ -29,9 +28,11 @@ li {
     list-style-type: none;
     margin: 1.5rem 0;
 }
-footer li{
-color: white;
+
+footer li {
+    color: white;
 }
+
 .md-menu {
     display: none;
 }
@@ -39,7 +40,8 @@ color: white;
 main {
     height: 80vh;
 }
-footer{
+
+footer {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -49,22 +51,25 @@ footer{
     position: relative;
     color: rgb(202, 202, 202);
 }
-.restname{
+
+.restname {
     text-align: center;
 }
-.socials > i{
+
+.socials>i {
     margin: .5rem;
     font-size: 1.3rem;
 }
-footer > *{
+
+footer>* {
     margin-bottom: 3rem;
-    
 }
-.info{
+
+.info {
     font-size: .8rem;
 }
 
-.namad{
+.namad {
     background-color: wheat;
     width: 70px;
     height: 70px;
@@ -73,31 +78,33 @@ footer > *{
     left: 0;
     margin-bottom: 0;
 }
+
+
 /* tablet */
+
 @media only screen and (min-width:768px) {
     .sm-buttons-container {
         display: none;
     }
-
     .md-menu {
         display: block;
     }
-
     .sm-menu {
         display: none;
     }
-
     li {
         display: inline-block;
         margin: .5rem;
     }
-
     .logo-img {
         width: 20%;
     }
-
     .login-btn,
     .fa-basket-shopping {
         margin: 0 1rem;
     }
+}
+
+.pointer-event {
+    cursor: pointer;
 }

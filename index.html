@@ -37,79 +37,90 @@
                 </div>
             </div>
             <div class="md-menu">
-                <ul>
+                <ul class="d-inline">
                     <li>خانه</li>
                     <li>ثبت سفارش</li>
                     <li>پیگیری سفارش</li>
-                    <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
-                    <!------------------------------ Modal login and sign in-------------------------------]  -->
-                    <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header border-0 w-100 d-flex flex-row">
-                                    <button type="button" class="btn-close float-start ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img" />
-                                </div>
-                                <div class="modal-body">
-                                    <h1 class="h3 titel-sign"><strong>ورود</strong> یا <strong>عضویت</strong></h1>
-                                    <div class="mt-5">
-                                        <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber">شماره تلفن همراه</label>
-                                        <input class="form-control form-control-lg text-start font-weight-light " type="tel" id="validation-phonenumber" minlength="11" maxlength="11">
-                                        <label for="validation-phonenumber" id="label_input_phonenumber" class="form-label mt-2 label-input-phonenumber">شماره با 9 0 شروع می‌شود</label>
-                                    </div>
-                                    <div class="modal-footer border-0 d-flex justify-content-center">
-                                        <button class="d-none" id="btn-hide" data-bs-target="#exampleModalToggle2" type="button" data-bs-toggle="modal"></button>
-                                        <button onclick="send_ponenumber()" class="btn btn-secondary col-12 p-3 btn-light bg-secondary text-white" id="btnSend">ادامه</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!----------------------------- modal send sms and code -------------------------- -->
-
-                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header border-0 pb-0 ">
-                                    <i class="fad fa-right h4" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"></i>
-                                </div>
-                                <div class="modal-body">
-                                    <h3 class="h3 ">تأیید شماره </h3>
-                                    <div class="col-12 mt-5">
-                                        کد تایید به شماره
-                                        <p class="d-inline">09393273968</p> ارسال شد.
-                                    </div>
-                                    <div class="col-12 float-start text-success my-4 pointer-event edit-phonenumber" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
-                                        <i class="fa-solid fa-edit "></i> اصلاح شماره
-                                    </div>
-
-                                    <input class="form-control form-control-lg text-start  mt-4" type="text">
-                                    <div class="d-flex justify-content-center mt-3 label-input-phonenumber">
-                                        <p class="d-inline  me-1 "> 1:45</p>
-                                        شکبیا باشید
-                                    </div>
-                                    <p class="h7">
-                                        ثبت نام در اسنپ‌فود به منزله پذیرش همه قوانین و شرایط استفاده است.
-
-                                    </p>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <button type="button" id="button" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-secondary col-12 btn p-3 btn-light bg-secondary text-white ">ورود</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
                     <!-- <i class="fa-duotone fa-basket-shopping fa-xl"></i> -->
                 </ul>
+                <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
+
+            </div>
+            <!------------------------------ Modal login and sign in-------------------------------]  -->
+            <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 w-100 d-flex flex-row">
+                            <button type="button" class="btn-close float-start ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img" />
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="h3 titel-sign"><strong>ورود</strong> یا <strong>عضویت</strong></h1>
+                            <form id="post-form">
+                                <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber">شماره تلفن همراه</label>
+                                <input class="form-control form-control-lg text-start font-weight-light " onchange="check_input()" name="phone" type="tel" id="validation-phonenumber" minlength="12" maxlength="12">
+                                <label for="validation-phonenumber" id="label_input_phonenumber" class="form-label mt-2 label-input-phonenumber">شماره با 9 0 شروع می‌شود</label>
+                                <button class="d-none" id="btn-hide" data-bs-target="#exampleModalToggle2" type="button" data-bs-toggle="modal"></button>
+
+                                <button onclick="send_ponenumber()" type="button" class="btn btn-secondary col-12 p-3 text-white" id="btnSend">ادامه</button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!----------------------------- modal send sms and code -------------------------- -->
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 pb-0 ">
+                            <i class="fad fa-right h4" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"></i>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <h3 class="h3 ">تأیید شماره </h3>
+                                <div class="col-12 mt-5">
+                                    کد تایید به شماره
+                                    <p class="d-inline" id="form-code-titel-phone_number">09393273968</p> ارسال شد.
+                                </div>
+                                <div class="col-12 float-start text-success my-4 pointer-event edit-phonenumber" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                                    <i class="fa-solid fa-edit "></i> اصلاح شماره
+                                </div>
+
+                                <input id="import_code" class="form-control form-control-lg text-start  mt-4" type="text">
+                                <div class="d-flex justify-content-center mt-3 label-input-phonenumber" id="timer_send_retern">
+                                    <div class="py-2" id="wait_countdown_timer">
+                                        <p class="me-1 d-inline" id="p_timer"></p>
+                                        شکبیا باشید
+                                    </div>
+                                    <p class="d-none" id="p_sned_retern" onclick="sned_retern_sms()">
+                                        ارسال مجدد کد
+                                    </p>
+                                </div>
+
+
+                                <p class="h7 text-center h7">
+                                    ثبت نام در اسنپ‌فود به منزله پذیرش همه قوانین و شرایط استفاده است.
+
+                                </p>
+                            </form>
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button type="button" onclick="send_code()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-secondary col-12 btn p-3 btn-light bg-secondary text-white ">ورود</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img d-flex" />
         <div class="sm-buttons-container">
-            <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
             <!-- <i class="fa-duotone fa-basket-shopping fa-2xl "></i> -->
+            <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
+
         </div>
     </header>
 
@@ -135,7 +146,10 @@
         <div class="namad "></div>
     </footer>
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="./assets/js/jquery-3.6.1.js"></script>
     <script src="./assets/js/modal-sign_up.js"></script>
+
+
 </body>
 
 </html>
