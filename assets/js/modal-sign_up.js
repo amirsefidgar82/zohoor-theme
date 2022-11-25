@@ -11,9 +11,8 @@ function send_ponenumber() {
         success: function() {
             document.getElementById("btn-hide").click();
         },
-        error: function() {
-            alert(Response);
-
+        error: function(data) {
+            alert(data.responseJSON.error);
         }
     });
 
@@ -78,8 +77,8 @@ const send_code = () => {
         success: function() {
             window.location = "http://google.com";
         },
-        error: function(error) {
-            alert(error);
+        error: function(data) {
+            alert(data.responseJSON.error);
         }
 
 
