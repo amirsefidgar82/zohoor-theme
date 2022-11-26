@@ -19,39 +19,44 @@ function send_ponenumber() {
     // add phonenumber to next modal to title phone number
     document.getElementById("form-code-titel-phone_number").innerText = $('#validation-phonenumber').val();
 
-    // countdown time 
-    countdown_timer();
+    // countdown time  you cna chenge heear
+    $('#p_timer').text("1:10");
+    countdown();
 }
-// function countdown timer and you can checne his count down  countdown(minutes, seconds);
-function countdown_timer() {
-    function countdown(minutes, seconds) {
-        function tick() {
-            var counter = document.getElementById("p_timer");
-            counter.innerText =
-                minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-            seconds--;
+// function countdown timer;
+function countdown() {
+    var interval;
+    clearInterval(interval);
+    interval = setInterval(function() {
+        var timer = $('#p_timer').html();
+        timer = timer.split(':');
+        var minutes = timer[0];
+        var seconds = timer[1];
+        seconds -= 1;
+        if (minutes < 0) return;
+        else if (seconds < 0 && minutes != 0) {
+            minutes -= 1;
+            seconds = 59;
+        } else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
 
-            if (seconds >= 0) {
-                timeoutHandle = setTimeout(tick, 1000);
-            } else {
-                if (minutes >= 1) {
-                    setTimeout(function() {
-                        countdown(minutes - 1, 59);
-                    }, 1000);
+        $('#p_timer').html(minutes + ':' + seconds);
 
-                }
+        if (seconds < 0 && minutes == 0) {
+            document.getElementById("p_sned_retern").classList.remove("d-none");
+            document.getElementById("p_sned_retern").classList.add("d-inline");
+            document.getElementById("p_sned_retern").style.cursor = "pointer";
+            document.getElementById("wait_countdown_timer").classList.add("d-none");
+        }
 
-            } // if seconds come to 0 chenge inner
-            if (seconds < "0" && minutes == "0") {
-                document.getElementById("p_sned_retern").classList.remove("d-none");
-                document.getElementById("p_sned_retern").classList.add("d-inline");
-                document.getElementById("p_sned_retern").style.cursor = "pointer";
-                document.getElementById("wait_countdown_timer").classList.add("d-none");
-            }
+        if (minutes == 0 && seconds == 0) {
+            clearInterval(interval);
+            document.getElementById("p_sned_retern").classList.remove("d-none");
+            document.getElementById("p_sned_retern").classList.add("d-inline");
+            document.getElementById("p_sned_retern").style.cursor = "pointer";
+            document.getElementById("wait_countdown_timer").classList.add("d-none");
         };
-        tick();
-    } // you can checnge here
-    countdown(1, 45);
+    }, 1000);
+
 
 }
 // if you click to ارسال مجدد کد 
@@ -61,7 +66,6 @@ function sned_retern_sms() {
     document.getElementById("p_sned_retern").classList.remove("d-inline");
     document.getElementById("p_sned_retern").classList.add("d-none");
     document.getElementById("wait_countdown_timer").classList.remove("d-none");
-    countdown_timer();
 }
 
 // if click to button ورود i go you to without page
@@ -117,7 +121,7 @@ function check_input_send_phonenumber() {
 
 function check_input_send_code() {
     let input_code = $('#import_code').val();
-    if (input_code.length == 5) {
+    if (input_code.length = !"") {
         document.getElementById("btn_send_code").classList.remove("btn-secondary");
         document.getElementById("btn_send_code").classList.add("btn-success");
         document.getElementById("btn_send_code").removeAttribute("disabled");
