@@ -19,13 +19,17 @@ function send_ponenumber() {
     // add phonenumber to next modal to title phone number
     document.getElementById("form-code-titel-phone_number").innerText = $('#validation-phonenumber').val();
 
-    // countdown time  you cna chenge heear
+    // countdown time  you cna chenge heear    
+    clearInterval(interval);
+
     $('#p_timer').text("1:10");
     countdown();
+
 }
+var interval;
+
 // function countdown timer;
 function countdown() {
-    var interval;
     clearInterval(interval);
     interval = setInterval(function() {
         var timer = $('#p_timer').html();
@@ -41,12 +45,6 @@ function countdown() {
 
         $('#p_timer').html(minutes + ':' + seconds);
 
-        if (seconds < 0 && minutes == 0) {
-            document.getElementById("p_sned_retern").classList.remove("d-none");
-            document.getElementById("p_sned_retern").classList.add("d-inline");
-            document.getElementById("p_sned_retern").style.cursor = "pointer";
-            document.getElementById("wait_countdown_timer").classList.add("d-none");
-        }
 
         if (minutes == 0 && seconds == 0) {
             clearInterval(interval);
