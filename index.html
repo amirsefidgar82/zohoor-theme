@@ -57,7 +57,8 @@
                             <h1 class="h3 titel-sign"><strong>ورود</strong> یا <strong>عضویت</strong></h1>
                             <form id="post-form py-4 my-3">
                                 <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber mt-3">شماره تلفن همراه</label>
-                                <input class="form-control form-control-lg text-start font-weight-light my-2" onchange="check_input_send_phonenumber()" name="phone" type="tel" id="validation-phonenumber" minlength="12" maxlength="12">
+                                <input class="form-control form-control-lg text-start font-weight-light my-2" onkeyup="check_input_send_phonenumber()" onchange="check_input_send_phonenumber()" onfocus="check_input_send_phonenumber()" name="phone" type="tel" id="validation-phonenumber"
+                                    minlength="12" maxlength="12">
                                 <label for="validation-phonenumber" id="label_input_phonenumber" class="form-label mt-2 label-input-phonenumber">شماره با 9 0 شروع می‌شود</label>
                                 <button class="d-none" id="btn-hide" data-bs-target="#exampleModalToggle2" type="button" data-bs-toggle="modal"></button>
                                 <button onclick="send_ponenumber()" type="button" class="btn btn-secondary col-12 p-3 text-white mt-5" id="btnSend">ادامه</button>
@@ -86,7 +87,7 @@
                                     <i class="fa-solid fa-edit "></i> اصلاح شماره
                                 </div>
 
-                                <input id="import_code" onchange="check_input_send_code()" class="form-control form-control-lg text-start  mt-4" type="text">
+                                <input id="import_code" onkeyup="check_input_send_code()" onchange="check_input_send_code()" onfocus="check_input_send_code()" class="form-control form-control-lg text-start  mt-4" type="text">
                                 <div class="d-flex justify-content-center mt-3 label-input-phonenumber" id="timer_send_retern">
                                     <div class="py-2" id="wait_countdown_timer">
                                         <p class="me-1 d-inline" id="p_timer"></p>
