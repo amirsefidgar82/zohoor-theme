@@ -119,15 +119,16 @@ function check_input_send_phonenumber() {
 
 function check_input_send_code() {
     let input_code = $('#import_code').val();
-    if (input_code.length == 0) {
-        document.getElementById("btn_send_code").setAttribute("disabled", "0");
-        document.getElementById("btn_send_code").classList.remove("btn-success");
-        document.getElementById("btn_send_code").classList.add("btn-secondary");
-    } else {
+    if (input_code.length == 5) {
         document.getElementById("btn_send_code").classList.remove("btn-secondary");
         document.getElementById("btn_send_code").classList.add("btn-success");
         document.getElementById("btn_send_code").removeAttribute("disabled");
+    } else {
+        document.getElementById("btn_send_code").setAttribute("disabled", "0");
+        document.getElementById("btn_send_code").classList.remove("btn-success");
+        document.getElementById("btn_send_code").classList.add("btn-secondary");
     }
+
 }
 
 //btn send
