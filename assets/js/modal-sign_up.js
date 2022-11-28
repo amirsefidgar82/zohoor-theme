@@ -22,7 +22,7 @@ function send_ponenumber() {
     // countdown time  you cna chenge heear    
     clearInterval(interval);
 
-    $('#p_timer').text("1:10");
+    $('#p_timer').text("1:40");
     countdown();
 
 }

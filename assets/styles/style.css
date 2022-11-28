@@ -50,6 +50,7 @@ footer {
     padding: 1rem;
     position: relative;
     color: rgb(202, 202, 202);
+    margin-top: 5rem;
 }
 
 .restname {
@@ -107,4 +108,17 @@ footer>* {
 
 .pointer-event {
     cursor: pointer;
+}
+
+
+/* ---------------------------- Home ------------------------------------ */
+
+.img_top {
+    height: 40vh;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.imges_header_item {
+    object-fit: cover;
 }
