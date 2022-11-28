@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./assets/styles/fonts.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/icons/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="menus">
+            <div class="sm-menu">
+                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <i class="fa-duotone fa-bars fa-2xl"></i>
+                </a>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">منو</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li>خانه</li>
+                            <li>ثبت سفارش</li>
+                            <li>پیگیری سفارش</li>
+                            <li>کد رهگیری</li>
+                            <li>درباره ما</li>
+                            <li>نظرات مشتریان</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="md-menu">
+                <ul class="d-inline">
+                    <li>خانه</li>
+                    <li>ثبت سفارش</li>
+                    <li>پیگیری سفارش</li>
+                    <!-- <i class="fa-duotone fa-basket-shopping fa-xl"></i> -->
+                </ul>
+                <button class="btn btn-primary login-btn mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
+            </div>
+            <!------------------------------ Modal login and sign in-------------------------------]  -->
+            <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 w-100 d-flex flex-row">
+                            <button type="button" class="btn-close float-start ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img" />
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="h3 titel-sign"><strong>ورود</strong> یا <strong>عضویت</strong></h1>
+                            <form id="post-form py-4 my-3">
+                                <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber mt-3">شماره تلفن همراه</label>
+                                <input class="form-control form-control-lg text-start font-weight-light my-2" onkeyup="check_input_send_phonenumber()" onchange="check_input_send_phonenumber()" onfocus="check_input_send_phonenumber()" name="phone" type="tel" id="validation-phonenumber"
+                                    minlength="12" maxlength="12">
+                                <label for="validation-phonenumber" id="label_input_phonenumber" class="form-label mt-2 label-input-phonenumber">شماره با 9 0 شروع می‌شود</label>
+                                <button class="d-none" id="btn-hide" data-bs-target="#exampleModalToggle2" type="button" data-bs-toggle="modal"></button>
+                                <button onclick="send_ponenumber()" type="button" class="btn btn-secondary col-12 p-3 text-white mt-5" id="btnSend">ادامه</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!----------------------------- modal send sms and code -------------------------- -->
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 pb-0 ">
+                            <i class="fad fa-right h4" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"></i>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <h3 class="h3 ">تأیید شماره </h3>
+                                <div class="col-12 mt-5">
+                                    کد تایید به شماره
+                                    <p class="d-inline" id="form-code-titel-phone_number">09393273968</p> ارسال شد.
+                                </div>
+                                <div class="col-12 float-start text-success my-4 pointer-event edit-phonenumber" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                                    <i class="fa-solid fa-edit "></i> اصلاح شماره
+                                </div>
+
+                                <input id="import_code" onkeyup="check_input_send_code()" onchange="check_input_send_code()" onfocus="check_input_send_code()" class="form-control form-control-lg text-start  mt-4" type="text">
+                                <div class="d-flex justify-content-center mt-3 label-input-phonenumber" id="timer_send_retern">
+                                    <div class="py-2" id="wait_countdown_timer">
+                                        <p class="me-1 d-inline" id="p_timer"></p>
+                                        شکبیا باشید
+                                    </div>
+                                    <p class="d-none" id="p_sned_retern" onclick="sned_retern_sms()">
+                                        ارسال مجدد کد
+                                    </p>
+                                </div>
+                                <p class="text-center mt-3" style="font-size:0.9rem ;">
+                                    ثبت نام در اسنپ‌فود به منزله پذیرش همه قوانین و شرایط استفاده است.
+                                </p>
+                            </form>
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button id="btn_send_code" type="button" onclick="send_code()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-secondary col-12 btn p-3  text-white ">ورود</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img d-flex" />
+        <div class="sm-buttons-container">
+            <!-- <i class="fa-duotone fa-basket-shopping fa-2xl "></i> -->
+            <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
+
+        </div>
+    </header>
+
+    <main class="p-3">
+        <div class="imges_header_home">
+            <div class="row mb-4">
+                <img src="./assets/img/plant-based-food-mc-220323-02-273c7b.webp" class="mx-auto col-11 img_top mt-4" alt="...">
+            </div>
+            <div class="row mb-5 ">
+                <img src="./assets/img/plant-based-food-mc-220323-02-273c7b.webp" class="imges_header_item col-5" alt="...">
+                <img src="./assets/img/plant-based-food-mc-220323-02-273c7b.webp" class="imges_header_item col-5" alt="...">
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class="socials ">
+            <i class="fa-brands fa-instagram "></i>
+            <i class="fa-brands fa-telegram "></i>
+            <i class="fa-regular fa-location-dot "></i>
+        </div>
+
+        <img src="https://4m4you.com/wp-content/uploads/2020/06/logo-placeholder.png " class="logo-img " />
+
+        <div class="info ">
+            <p class="restname ">باغ رستوران ظهور</p>
+            <p>آدرس: خیابان فلان نبش کوچه فلانی فرعی چندم پلاک ؟</p>
+            <p>تلفن ثابت: 025-32589658</p>
+        </div>
+
+        <div class="namad "></div>
+    </footer>
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="./assets/js/jquery-3.6.1.js"></script>
+    <script src="./assets/js/modal-sign_up.js"></script>
+
+
+</body>
+
+</html>
