@@ -38,7 +38,7 @@ footer li {
 }
 
 main {
-    height: 80vh;
+    /* height: 80vh; */
 }
 
 footer {
@@ -50,7 +50,7 @@ footer {
     padding: 1rem;
     position: relative;
     color: rgb(202, 202, 202);
-    margin-top: 5rem;
+    margin-top: 7rem;
 }
 
 .restname {
@@ -113,12 +113,44 @@ footer>* {
 
 /* ---------------------------- Home ------------------------------------ */
 
+main {
+    overflow-x: hidden;
+}
+
 .img_top {
-    height: 40vh;
+    height: 20%;
     border-radius: 30px;
     object-fit: cover;
 }
 
 .imges_header_item {
+    object-fit: cover;
+    width: 46% !important;
+    /* width: 49.666%; */
+}
+
+.discription {
+    overflow: hidden;
+}
+
+.number_person {
+    height: 35px;
+    width: 60px !important;
+}
+
+.name_input {
+    width: 190px !important;
+}
+
+.resereve_form {
+    border: 2px solid rgba(124, 114, 114, 0.479);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.img_sini {
+    height: 20vh;
+    width: 50vw !important;
     object-fit: cover;
 }

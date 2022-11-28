@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="stylesheet" href="./assets/styles/fonts.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/icons/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="menus">
+            <div class="sm-menu">
+                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <i class="fa-duotone fa-bars fa-2xl"></i>
+                </a>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">منو</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul>
+                            <li>خانه</li>
+                            <li>ثبت سفارش</li>
+                            <li>پیگیری سفارش</li>
+                            <li>کد رهگیری</li>
+                            <li>درباره ما</li>
+                            <li>نظرات مشتریان</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="md-menu">
+                <ul class="d-inline">
+                    <li>خانه</li>
+                    <li>ثبت سفارش</li>
+                    <li>پیگیری سفارش</li>
+                    <!-- <i class="fa-duotone fa-basket-shopping fa-xl"></i> -->
+                </ul>
+                <button class="btn btn-primary login-btn mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
+            </div>
+            <!------------------------------ Modal login and sign in-------------------------------]  -->
+            <div class="modal fade" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 w-100 d-flex flex-row">
+                            <button type="button" class="btn-close float-start ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img" />
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="h3 titel-sign"><strong>ورود</strong> یا <strong>عضویت</strong></h1>
+                            <form id="post-form py-4 my-3">
+                                <label for="validation-phonenumber" id="label_titel_input_phonenumber" class="form-label label-input-phonenumber mt-3">شماره تلفن همراه</label>
+                                <input class="form-control form-control-lg text-start font-weight-light my-2" onkeyup="check_input_send_phonenumber()" onchange="check_input_send_phonenumber()" onfocus="check_input_send_phonenumber()" name="phone" type="tel" id="validation-phonenumber"
+                                    minlength="12" maxlength="12">
+                                <label for="validation-phonenumber" id="label_input_phonenumber" class="form-label mt-2 label-input-phonenumber">شماره با 9 0 شروع می‌شود</label>
+                                <button class="d-none" id="btn-hide" data-bs-target="#exampleModalToggle2" type="button" data-bs-toggle="modal"></button>
+                                <button onclick="send_ponenumber()" type="button" class="btn btn-secondary col-12 p-3 text-white mt-5" id="btnSend">ادامه</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!----------------------------- modal send sms and code -------------------------- -->
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 pb-0 ">
+                            <i class="fad fa-right h4" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"></i>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <h3 class="h3 ">تأیید شماره </h3>
+                                <div class="col-12 mt-5">
+                                    کد تایید به شماره
+                                    <p class="d-inline" id="form-code-titel-phone_number">09393273968</p> ارسال شد.
+                                </div>
+                                <div class="col-12 float-start text-success my-4 pointer-event edit-phonenumber" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                                    <i class="fa-solid fa-edit "></i> اصلاح شماره
+                                </div>
+
+                                <input id="import_code" onkeyup="check_input_send_code()" onchange="check_input_send_code()" onfocus="check_input_send_code()" class="form-control form-control-lg text-start  mt-4" type="text">
+                                <div class="d-flex justify-content-center mt-3 label-input-phonenumber" id="timer_send_retern">
+                                    <div class="py-2" id="wait_countdown_timer">
+                                        <p class="me-1 d-inline" id="p_timer"></p>
+                                        شکبیا باشید
+                                    </div>
+                                    <p class="d-none" id="p_sned_retern" onclick="sned_retern_sms()">
+                                        ارسال مجدد کد
+                                    </p>
+                                </div>
+                                <p class="text-center mt-3" style="font-size:0.9rem ;">
+                                    ثبت نام در اسنپ‌فود به منزله پذیرش همه قوانین و شرایط استفاده است.
+                                </p>
+                            </form>
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button id="btn_send_code" type="button" onclick="send_code()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn-secondary col-12 btn p-3  text-white ">ورود</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <img src="https://www.notarycam.com/wp-content/uploads/2018/11/your-logo-here.png" class="logo-img d-flex" />
+        <div class="sm-buttons-container">
+            <!-- <i class="fa-duotone fa-basket-shopping fa-2xl "></i> -->
+            <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">ورود  /  ثبت نام</button>
+
+        </div>
+    </header>
+
+    <main class="mb-5">
+
+        <div class="row">
+            <h1 class="text-center mt-5">روز تولد</h1>
+            <hr class="col-2 m-auto">
+        </div>
+        <div class="row px-4 discription">
+            <div>
+                <h4 class="col-3 p-2 ">توضیحات:</h4>
+                <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus dolore optio adipisci impedit. Accusantium adipisci exercitationem, vitae cupiditate placeat fugit ratione vel quaerat doloremque tenetur, et aliquam ducimus doloribus.</p>
+            </div>
+
+            <img class="w-50 mx-auto" src="data:image/jpeg;base64,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"
+                alt="">
+            <p class="text-center col-12">8sr22rVpzcfBEiDgAMR0TllqqlFG6QZBkYEZKfZnqqe0R9waDIdFzNY27iVobPVU5lVUtnqKayookhVHKzNSLVXwKzv5iXE8VYW</p>
+
+            <div class="mt-3">
+                <h4 class="col-3 p-2">قوانین:</h4>
+                <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus dolore optio adipisci impedit. Accusantium adipisci exercitationem, vitae cupiditate placeat fugit ratione vel quaerat doloremque tenetur, et aliquam ducimus doloribus.</p>
+            </div>
+        </div>
+        <h4 class="col-3 px-5 mt-2">رزرو:</h4>
+
+        <form class="row col-9  m-auto  resereve_form">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <p class=" mt-3 me-2">تعداد نفر:</p>
+                <input type="text" class="form-control text-center number_person float-start">
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <p class=" mt-3 me-2">نام و نام خانوادگی:</p>
+                <input type="text" class="form-control text-center name_input ">
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <p class=" mt-3 me-2">شماره تلفن :</p>
+                <input type="text" class="form-control text-center name_input ">
+                <p class=" mt-3 me-2 ms-4"> شماره تلفن 2:</p>
+                <input type="text" class="form-control text-center name_input ">
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <p class=" mt-3 me-2">تاریخ رزرو:</p>
+                <input type="text" class="form-control text-center name_input ">
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <p class=" mt-3 me-2 d-inline">مبلغ پیش بینی:</p>
+                <p class="mt-4 me-2 d-inline">120000</p>
+            </div>
+
+        </form>
+
+
+    </main>
+
+    <footer class="">
+        <div class="socials ">
+            <i class="fa-brands fa-instagram "></i>
+            <i class="fa-brands fa-telegram "></i>
+            <i class="fa-regular fa-location-dot "></i>
+        </div>
+
+        <img src="https://4m4you.com/wp-content/uploads/2020/06/logo-placeholder.png " class="logo-img " />
+
+        <div class="info ">
+            <p class="restname ">باغ رستوران ظهور</p>
+            <p>آدرس: خیابان فلان نبش کوچه فلانی فرعی چندم پلاک ؟</p>
+            <p>تلفن ثابت: 025-32589658</p>
+        </div>
+
+        <div class="namad "></div>
+    </footer>
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="./assets/js/jquery-3.6.1.js"></script>
+    <script src="./assets/js/modal-sign_up.js"></script>
+
+
+</body>
+
+</html>
