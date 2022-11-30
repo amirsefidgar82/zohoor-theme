@@ -144,38 +144,58 @@
                     کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
             </div>
         </div>
-        <h4 class="col-3 px-5 mt-2">رزرو:</h4>
+        <h4 class="col-3 px-5 my-2">رزرو:</h4>
         <div class="container">
-            <form class="row col-9  m-auto  resereve_form input-group">
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <p class=" mt-3 me-2">تعداد نفر:</p>
-                    <input type="text" class="form-control text-center number_person float-start">
+            <form class="row col-9 m-auto resereve_form input-group p-2 d-flex" id="form_first_reserve">
+                <div class="input-group d-flex align-items-center justify-content-center p-2">
+
+                    <span class="input-group-text">تعداد نفرات</span>
+                    <div class="col-2">
+                        <input type="text" class="form-control text-center number_person float-start rounded-end rounded-0">
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select col-2 ms-2" aria-label="Default select example">
+                            <option selected>تایم رزرو</option>
+                            <option value="1">شب</option>
+                            <option value="2">روز</option>
+                         </select>
+                    </div>
+
+                    <div class="input-group justify-content-center mt-3">
+                        <span class="input-group-text">تاریخ رزرو</span>
+                        <div class="col-5">
+                            <input type="text" name="persianDatapicker" id="persianDatapicker" class="form-control text-center rounded-0 rounded-end">
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <p class="col-4 col-sm-4 mt-3 me-2">نام و نام خانوادگی:</p>
+                <button class="btn btn-secondary rounded px-5 py-2 mt-3" type="button" onclick="send_form_reserve()">ادامه</button>
+            </form>
+
+            <form class="row col-9 m-auto resereve_form input-group p-2 d-none" id="form_second_reserve">
+                <i class="fad fa-right h4" id="back_to_form_first" onclick="back_to_form_first()"></i>
+                <div class="col-12 d-flex align-items-center justify-content-center mb-3">
+                    <span class="input-group-text rounded-0 rounded-start">نام و نام خانوادگی</span>
                     <div class="col-5">
-                        <input type="text" class="form-control text-center name_input ">
+                        <input type="text" class="form-control text-center number_person float-start rounded-end rounded-0">
+                    </div>
+                </div>
+                <div class="input-group d-flex justify-content-center">
+                    <span class="input-group-text">شماره تلفن ها</span>
+                    <div class="col-3">
+                        <input type="text" class="form-control rounded-0 ">
+                    </div>
+                    <div class="col-3">
+                        <input type="text" class="form-control rounded-0 rounded-end">
                     </div>
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="input-group">
-                        <span class="input-group-text">شماره تلفن ها</span>
-                        <input type="text" class="form-control">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="row d-flex align-items-center justify-content-center input-group">
-                    <p class="col-3 mt-3 me-2">تاریخ رزرو:</p>
-                    <div class="col-5">
-                        <input type="text" name="persianDatapicker" id="persianDatapicker" class="form-control text-center name_input col-1 ">
-                    </div>
-                </div>
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <p class=" mt-3 me-2 d-inline">مبلغ پیش بینی:</p>
+                    <p class=" mt-3 me-2 d-inline">مبلغ پیش پرداخت:</p>
                     <p class="mt-4 me-2 d-inline">120000</p>
                 </div>
-
+                <button class="btn btn-secondary rounded px-5 py-2 mt-3" type="button" onclick="send_form_reserve()">ادامه</button>
             </form>
+
         </div>
 
 
@@ -204,6 +224,7 @@
     <script src="./assets/js/persian-date.min.js"></script>
     <script src="./assets/js/persian-datepicker.min.js"></script>
     <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/Form-reserve.js"></script>
 
 </body>
 

@@ -2,14 +2,14 @@ $(document).ready(function() {
     const datepickerDOM = $("#persianDatapicker");
     const dateObject = datepickerDOM.persianDatepicker({
         "inline": false,
-        "format": "LLLL",
+        "format": "L",
         "viewMode": "day",
         "initialValue": true,
         "minDate": false,
         "maxDate": false,
         "autoClose": false,
         "position": "auto",
-        "altFormat": "lll",
+        "altFormat": "l",
         "altField": "#altfieldExample",
         "onlyTimePicker": false,
         "onlySelectOnDate": false,
@@ -94,8 +94,7 @@ $(document).ready(function() {
         },
         "responsive": true,
         "onSelect": function() {
-
-            alert(`تاریخ انتخاب شده : ${date.year}/${date.month}/${date.date} ~ ${date.hour}:${date.minute}:${date.second}`);
+            // alert(`تاریخ انتخاب شده : ${date.year}/${date.month}/${date.date} ~ ${date.hour}:${date.minute}:${date.second}`);
         }
     });
 
