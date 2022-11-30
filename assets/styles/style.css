@@ -1,3 +1,4 @@
+@import "fonts.css";
 :root {
     --fa-primary-color: rgb(83, 83, 83);
     --fa-secondary-color: rgb(146, 146, 146);
@@ -5,7 +6,8 @@
 
 * {
     direction: rtl;
-    font-family: 'iransans';
+    font-family: iransans;
+    box-sizing: border-box;
 }
 
 header {
