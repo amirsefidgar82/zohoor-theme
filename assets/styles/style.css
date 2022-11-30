@@ -39,9 +39,7 @@ footer li {
     display: none;
 }
 
-main {
-    /* height: 80vh; */
-}
+
 
 footer {
     display: flex;
@@ -135,14 +133,14 @@ main {
     overflow: hidden;
 }
 
-.number_person {
+/* .number_person { */
     /* height: 35px; */
     /* width: 60px !important; */
-}
+/* } */
 
-.name_input {
+/* .name_input { */
     /* width: 190px !important; */
-}
+/* } */
 
 .resereve_form {
     border: 2px solid rgba(124, 114, 114, 0.479);
