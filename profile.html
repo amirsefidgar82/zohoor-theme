@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,43 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
 </head>
+
 <body>
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="card rounded-5 shadow-sm p-3" style="width: 18rem;">
+        <div class="card rounded-5 shadow-sm p-3 w-50" style="width: 18rem;">
             <div class="d-flex justify-content-center align-items-center flex-column">
-                <h2 class="m-0 h3 fw-semibold"> اطلاعات حساب</h2>
-                <hr class="col-4 m-2">
+                <h2 class="m-2 h3 fw-semibold"> اطلاعات حساب</h2>
+                <hr class="col-3 m-2">
             </div>
             <div class="card-body">
-              <div>
+                <div class="row mb-3">
+                    <label for="formFile" class="form-label form-text">آپلود عکس جدید</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                <div class="row mb-3">
+                    <div class="col p-1">
+                        <label for="f-name" class="form-text m-2"> نام </label>
+                        <input type="text" class="form-control" id="f-name">
+                    </div>
+                    <div class="col p-1">
+                        <label for="l-name" class="form-text m-2"> نام خانوادگی </label>
+                        <input type="text" class="form-control" id="l-name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <label for="phone-number" class="form-text m-2"> شماره همراه </label>
+                        <input type="text" class="form-control" id="phone-number">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-primary col-6 mx-auto mt-5">تایید</button>
+                </div>
                 
-              </div>
             </div>
-          </div>
+        </div>
     </div>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
