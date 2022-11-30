@@ -1,0 +1,156 @@
+:root {
+    --fa-primary-color: rgb(83, 83, 83);
+    --fa-secondary-color: rgb(146, 146, 146);
+}
+
+* {
+    direction: rtl;
+    font-family: 'iransans';
+}
+
+header {
+    background-color: #1C4F40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo-img {
+    width: 30%;
+}
+
+.offcanvas-title {
+    font-weight: 900;
+}
+
+li {
+    list-style-type: none;
+    margin: 1.5rem 0;
+}
+
+footer li {
+    color: white;
+}
+
+.md-menu {
+    display: none;
+}
+
+main {
+    /* height: 80vh; */
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2C2C2C;
+    border-radius: 50px 50px 0 0;
+    padding: 1rem;
+    position: relative;
+    color: rgb(202, 202, 202);
+    margin-top: 7rem;
+}
+
+.restname {
+    text-align: center;
+}
+
+.socials>i {
+    margin: .5rem;
+    font-size: 1.3rem;
+}
+
+footer>* {
+    margin-bottom: 3rem;
+}
+
+.info {
+    font-size: .8rem;
+}
+
+.namad {
+    background-color: wheat;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    margin-bottom: 0;
+}
+
+
+/* tablet */
+
+@media only screen and (min-width:768px) {
+    .sm-buttons-container {
+        display: none;
+    }
+    .md-menu {
+        display: block;
+    }
+    .sm-menu {
+        display: none;
+    }
+    li {
+        display: inline-block;
+        margin: .5rem;
+    }
+    .logo-img {
+        width: 20%;
+    }
+    .login-btn,
+    .fa-basket-shopping {
+        margin: 0 1rem;
+    }
+}
+
+.pointer-event {
+    cursor: pointer;
+}
+
+
+/* ---------------------------- Home ------------------------------------ */
+
+main {
+    overflow-x: hidden;
+}
+
+.img_top {
+    height: 20%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.imges_header_item {
+    object-fit: cover;
+    width: 46% !important;
+    /* width: 49.666%; */
+}
+
+.discription {
+    overflow: hidden;
+}
+
+.number_person {
+    height: 35px;
+    width: 60px !important;
+}
+
+.name_input {
+    width: 190px !important;
+}
+
+.resereve_form {
+    border: 2px solid rgba(124, 114, 114, 0.479);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.img_sini {
+    height: 20vh;
+    width: 50vw !important;
+    object-fit: cover;
+}
