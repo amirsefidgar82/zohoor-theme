@@ -156,3 +156,7 @@ main {
     width: 50vw !important;
     object-fit: cover;
 }
+
+.justify{
+    text-align: justify;
+}
