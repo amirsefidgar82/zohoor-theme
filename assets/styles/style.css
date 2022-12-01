@@ -39,10 +39,6 @@ footer li {
     display: none;
 }
 
-main {
-    /* height: 80vh; */
-}
-
 footer {
     display: flex;
     align-items: center;
@@ -135,9 +131,6 @@ main {
     overflow: hidden;
 }
 
-
-/* ////////////////////////reserve form///////////////////////////// */
-
 .resereve_form {
     border-radius: 15px;
     display: flex;
@@ -165,4 +158,8 @@ main {
 
 .list-style {
     list-style: disc;
+}
+
+.justify {
+    text-align: justify;
 }
