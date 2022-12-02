@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="md-menu">
-                <ul class="d-inline">
+                <ul class="d-inline menu">
                     <li>خانه</li>
                     <li>ثبت سفارش</li>
                     <li>پیگیری سفارش</li>
@@ -123,12 +123,12 @@
     <main class="mb-5">
 
         <div class="row">
-            <h1 class="text-center mt-5">روز تولد</h1>
-            <hr class="col-2 m-auto">
+            <h1 class="text-center mt-5">رزرو تولد</h1>
+            <hr class="col-5 col-sm-2 m-auto">
         </div>
         <div class="row px-4 discription">
             <div>
-                <h4 class="col-3 p-2 ">توضیحات:</h4>
+                <h4 class="col-3 p-2 mt-3">توضیحات:</h4>
                 <p class="text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
                     کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
             </div>
@@ -140,60 +140,86 @@
 
             <div class="mt-3">
                 <h4 class="col-3 p-2">قوانین:</h4>
-                <p class="text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای
-                    کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
+                <ul>
+                    <li class="list-style col-12 h9">صنعت چاپ و با استفاده از طراحان گرافیک طراحان</li>
+                    <li class="list-style col-12 h9">صنعت چاپ و با استفاده از طراحان گرافیک طراحان</li>
+                    <li class="list-style col-12 h9">صنعت چاپ و با استفاده از طراحان گرافیک طراحان</li>
+
+                </ul>
             </div>
         </div>
         <h4 class="col-3 px-5 my-2">رزرو:</h4>
         <div class="container">
-            <form class="row col-9 m-auto resereve_form input-group p-2 d-flex" id="form_first_reserve">
-                <div class="input-group d-flex align-items-center justify-content-center p-2">
 
+
+
+
+            <form class="row col-9 m-auto resereve_form border-form-reserve input-group  d-flex " id="form_first_reserve">
+                <div class="input-group d-flex align-items-center justify-content-center p-2 mt-4">
                     <span class="input-group-text">تعداد نفرات</span>
-                    <div class="col-2">
-                        <input type="text" class="form-control text-center number_person float-start rounded-end rounded-0">
+                    <div class="col-2 col-lg-1">
+                        <input type="number" id="members" min="1" class="form-control text-center number_person float-start rounded-end rounded-0" onkeyup="check_form_first_reserve()" onchange="check_form_first_reserve()">
                     </div>
-                    <div class="col-4">
-                        <select class="form-select col-2 ms-2" aria-label="Default select example">
-                            <option selected>تایم رزرو</option>
-                            <option value="1">شب</option>
-                            <option value="2">روز</option>
+                    <div class="col-5 col-sm-4 col-lg-2">
+                        <select onchange="check_form_first_reserve()" class="form-select col-2 ms-2" id="select" aria-label="Default select example">
+                            <option selected disabled="disabled">تایم رزرو</option>
+                            <option value="1">ناهار</option>
+                            <option value="2">شام</option>
                          </select>
                     </div>
 
                     <div class="input-group justify-content-center mt-3">
                         <span class="input-group-text">تاریخ رزرو</span>
-                        <div class="col-5">
-                            <input type="text" name="persianDatapicker" id="persianDatapicker" class="form-control text-center rounded-0 rounded-end">
+                        <div class="col-5 col-lg-2">
+                            <input type="text" name="persianDatapicker" id="persianDatapicker" class="form-control text-center rounded-0 rounded-end" aria-invalid="true">
                         </div>
                     </div>
-
                 </div>
-                <button class="btn btn-secondary rounded px-5 py-2 mt-3" type="button" onclick="send_form_reserve()">ادامه</button>
+                <button id="btn_form_first_reserve" class="btn btn-secondary rounded px-5 py-2 m-3 col-11" type="button" disabled onclick="btn_send_form_first_reserve()">ادامه</button>
+
+                <div class="loading d-none  rounded-4 d-flex justify-content-center align-items-center" id="loading">
+                    <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
             </form>
 
-            <form class="row col-9 m-auto resereve_form input-group p-2 d-none" id="form_second_reserve">
-                <i class="fad fa-right h4" id="back_to_form_first" onclick="back_to_form_first()"></i>
+
+            <form class="row col-9 m-auto resereve_form border-form-reserve input-group  d-none" id="form_second_reserve">
+                <i class="fad fa-right h4 " id="back_to_form_first" onclick="back_to_form_first()"></i>
                 <div class="col-12 d-flex align-items-center justify-content-center mb-3">
-                    <span class="input-group-text rounded-0 rounded-start">نام و نام خانوادگی</span>
-                    <div class="col-5">
-                        <input type="text" class="form-control text-center number_person float-start rounded-end rounded-0">
+                    <span class="input-group-text rounded-0 rounded-start" onmousedown="check_form_second_reserve()" onclick="check_form_second_reserve()" onkeyup="check_form_second_reserve()" onchange="check_form_second_reserve()">نام و نام خانوادگی</span>
+                    <div class="col-6  col-sm-4 col-lg-2">
+                        <input type="text" id="fname_lname" class="form-control text-center number_person float-start rounded-end rounded-0">
                     </div>
                 </div>
                 <div class="input-group d-flex justify-content-center">
-                    <span class="input-group-text">شماره تلفن ها</span>
-                    <div class="col-3">
-                        <input type="text" class="form-control rounded-0 ">
-                    </div>
-                    <div class="col-3">
-                        <input type="text" class="form-control rounded-0 rounded-end">
+                    <div class="input-group flex-sm-nowrap align-items-sm-center mb-3 p-2">
+                        <div class="input-group justify-content-lg-end justify-content-center">
+                            <span class="input-group-text">شماره 1</span>
+                            <div class="col-8 col-sm-8 col-lg-4">
+                                <input type="text" class="form-control text-center rounded-0 rounded-end" id="phonenumber_1" onmousedown="check_form_second_reserve()" onclick="check_form_second_reserve()" onkeyup="check_form_second_reserve()" onchange="check_form_second_reserve()">
+                            </div>
+                        </div>
+
+                        <div class=" input-group justify-content-lg-start justify-content-center ms-lg-2 mt-3 mt-sm-0">
+                            <span class="input-group-text">شماره 2</span>
+                            <div class="col-8 col-sm-8 col-lg-4">
+                                <input type="text" class="form-control text-center rounded-0 rounded-end" id="phonenumber_2" onmousedown="check_form_second_reserve()" onclick="check_form_second_reserve()" onkeyup="check_form_second_reserve()" onchange="check_form_second_reserve()">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <p class=" mt-3 me-2 d-inline">مبلغ پیش پرداخت:</p>
-                    <p class="mt-4 me-2 d-inline">120000</p>
+                <div class="col-12 d-flex align-items-center justify-content-center mt-3">
+                    <p class="  me-2 d-inline">مبلغ پیش پرداخت:</p>
+                    <p class=" me-2 d-inline" id="price">120000</p>
                 </div>
-                <button class="btn btn-secondary rounded px-5 py-2 mt-3" type="button" onclick="send_form_reserve()">ادامه</button>
+                <button class="btn btn-secondary rounded px-5 py-2 m-3 col-11" type="button" id="btn_form_second_reserve" disabled onclick="btn_send_form_second_reserve()">ادامه و پرداخت</button>
+                <div class="loading d-none  rounded-4 d-flex justify-content-center align-items-center" id="loading_form-2">
+                    <div class="spinner-border " style="width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
             </form>
 
         </div>

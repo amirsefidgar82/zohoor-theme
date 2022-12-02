@@ -39,8 +39,6 @@ footer li {
     display: none;
 }
 
-
-
 footer {
     display: flex;
     align-items: center;
@@ -93,7 +91,7 @@ footer>* {
     .sm-menu {
         display: none;
     }
-    li {
+    .menu * {
         display: inline-block;
         margin: .5rem;
     }
@@ -133,20 +131,14 @@ main {
     overflow: hidden;
 }
 
-/* .number_person { */
-    /* height: 35px; */
-    /* width: 60px !important; */
-/* } */
-
-/* .name_input { */
-    /* width: 190px !important; */
-/* } */
-
 .resereve_form {
-    border: 2px solid rgba(124, 114, 114, 0.479);
     border-radius: 15px;
     display: flex;
     justify-content: center;
+}
+
+.border-form-reserve {
+    border: 2px solid rgba(124, 114, 114, 0.479);
 }
 
 .img_sini {
@@ -155,6 +147,19 @@ main {
     object-fit: cover;
 }
 
-.justify{
+.loading {
+    height: 100%;
+    background: #000000a3;
+    position: absolute;
+    right: 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.list-style {
+    list-style: disc;
+}
+
+.justify {
     text-align: justify;
 }

@@ -1,27 +1,95 @@
-function send_form_reserve() {
-    // document.getElementById("form_seceend_reserve").setAttribute("")
-
+function form_one_to_form_two() {
     document.getElementById("form_second_reserve").classList.remove("d-none");
     document.getElementById("form_second_reserve").classList.add("d-flex");
-
     document.getElementById("form_first_reserve").classList.remove("d-flex");
     document.getElementById("form_first_reserve").classList.add("d-none");
-
 }
 
 function back_to_form_first() {
-    // document.getElementById("back_to_form_first")
-
     document.getElementById("form_second_reserve").classList.remove("d-flex");
     document.getElementById("form_second_reserve").classList.add("d-none");
 
     document.getElementById("form_first_reserve").classList.remove("d-none");
     document.getElementById("form_first_reserve").classList.add("d-flex");
+    location.reload();
 }
 
-// document.getElementById("form_seceend_reserve").removeAttribute("disabled");
-// document.getElementById("form_seceend_reserve").setAttribute("d-inline", "0");
+function check_form_first_reserve() {
+    var select = document.getElementById("select").value;
 
+    if (document.getElementById("members").value > 0 && select == 1 || select == 2) {
+        document.getElementById("btn_form_first_reserve").classList.remove("btn-secondary");
+        document.getElementById("btn_form_first_reserve").classList.add("btn-success");
+        document.getElementById("btn_form_first_reserve").removeAttribute("disabled");
 
+    } else {
+        document.getElementById("btn_form_first_reserve").setAttribute("disabled", "0");
+        document.getElementById("btn_form_first_reserve").classList.remove("btn-success");
+        document.getElementById("btn_form_first_reserve").classList.add("btn-secondary");
+    }
+}
 
-// form_first_reserve
+function check_form_second_reserve() {
+    if (document.getElementById("fname_lname").value.length > 3 && document.getElementById("phonenumber_1").value.length > 8 && document.getElementById("phonenumber_2").value.length > 8) {
+        document.getElementById("btn_form_second_reserve").classList.remove("btn-secondary");
+        document.getElementById("btn_form_second_reserve").classList.add("btn-success");
+        document.getElementById("btn_form_second_reserve").removeAttribute("disabled");
+
+    } else {
+        document.getElementById("btn_form_second_reserve").setAttribute("disabled", "0");
+        document.getElementById("btn_form_second_reserve").classList.remove("btn-success");
+        document.getElementById("btn_form_second_reserve").classList.add("btn-secondary");
+    }
+}
+
+function btn_send_form_first_reserve() {
+
+    document.getElementById("loading").classList.remove("d-none");
+    document.getElementById("form_first_reserve").classList.remove("border-form-reserve");
+
+    document.getElementById("btn_form_first_reserve").setAttribute("disabled", "0");
+    document.getElementById("btn_form_first_reserve").classList.remove("btn-success");
+    document.getElementById("btn_form_first_reserve").classList.add("btn-secondary");
+
+    $.ajax({
+        type: 'POST',
+        url: 'https://reqres.in/api/users',
+        data: {
+            members: $('#members').val(),
+            Meal: $('#select').val(),
+            data: $('#persianDatapicker').val()
+        },
+        success: function(data) {
+            form_one_to_form_two();
+            document.getElementById("price").innerText = data.responseJSON.price;
+        },
+        error: function(data) {
+            alert(data.responseJSON.error);
+        }
+    });
+}
+
+function btn_send_form_second_reserve() {
+    document.getElementById("loading_form-2").classList.remove("d-none");
+    document.getElementById("form_second_reserve").classList.remove("border-form-reserve");
+
+    document.getElementById("btn_form_second_reserve").setAttribute("disabled", "0");
+    document.getElementById("btn_form_second_reserve").classList.remove("btn-success");
+    document.getElementById("btn_form_second_reserve").classList.add("btn-secondary");
+
+    $.ajax({
+        type: 'POST',
+        url: 'https://reqres.in/api/users',
+        data: {
+            fname_lname: $('#fname_lname').val(),
+            phonenumber1: $('#phonenumber_1').val(),
+            phonenumber2: $('#phonenumber_2').val()
+        },
+        success: function() {
+            window.location = "http://google.com";
+        },
+        error: function(data) {
+            alert(data.responseJSON.error);
+        }
+    })
+}
