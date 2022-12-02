@@ -51,18 +51,17 @@ function btn_send_form_first_reserve() {
     document.getElementById("btn_form_first_reserve").classList.remove("btn-success");
     document.getElementById("btn_form_first_reserve").classList.add("btn-secondary");
 
+    alert($('#persianDatapicker').val());
     $.ajax({
         type: 'POST',
         url: 'https://reqres.in/api/users',
         data: {
             members: $('#members').val(),
             Meal: $('#select').val(),
-            data: $('#persianDatapicker').val()
+            data: $('#persianDatapicker').val().toString()
         },
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                // 'CSRFToken': getCSRFTokenValue()
-
         },
         success: function(data) {
             form_one_to_form_two();
@@ -74,6 +73,8 @@ function btn_send_form_first_reserve() {
         }
     });
 }
+
+
 
 function btn_send_form_second_reserve() {
     document.getElementById("loading_form-2").classList.remove("d-none");
@@ -96,10 +97,16 @@ function btn_send_form_second_reserve() {
                 // 'CSRFToken': getCSRFTokenValue()
         },
         success: function() {
-            window.location = "http://google.com";
+            location.window = "google.com";
         },
         error: function(data) {
             alert(data.responseJSON.error);
+
+            document.getElementById("form_first_reserve").classList.remove("d-flex");
+            document.getElementById("form_first_reserve").classList.add("d-none");
+
+            // document.getElementById("form_first_reserve").classList.remove("d-none");
+            // document.getElementById("form_first_reserve").classList.add("d-flex");
         }
     })
 }
