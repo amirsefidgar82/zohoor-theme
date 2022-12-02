@@ -59,11 +59,17 @@ function btn_send_form_first_reserve() {
             Meal: $('#select').val(),
             data: $('#persianDatapicker').val()
         },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                // 'CSRFToken': getCSRFTokenValue()
+
+        },
         success: function(data) {
             form_one_to_form_two();
             document.getElementById("price").innerText = data.responseJSON.price;
         },
         error: function(data) {
+            back_to_form_first();
             alert(data.responseJSON.error);
         }
     });
@@ -84,6 +90,10 @@ function btn_send_form_second_reserve() {
             fname_lname: $('#fname_lname').val(),
             phonenumber1: $('#phonenumber_1').val(),
             phonenumber2: $('#phonenumber_2').val()
+        },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                // 'CSRFToken': getCSRFTokenValue()
         },
         success: function() {
             window.location = "http://google.com";
