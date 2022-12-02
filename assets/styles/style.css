@@ -112,7 +112,7 @@ footer>* {
 /* ---------------------------- Home ------------------------------------ */
 
 main {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .img_top {
@@ -178,6 +178,7 @@ main {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    height: 300px;
 }
 
 .img_under_gallery {
@@ -187,6 +188,9 @@ main {
     object-fit: cover;
     height: 90px;
     position: relative;
-    top: -215px;
-    margin-right: 12rem;
+    position: absolute;
+    display: block;
+    width: 35% !important;
+    /* float: right; */
+    left: 20%;
 }
