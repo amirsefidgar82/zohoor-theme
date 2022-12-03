@@ -1,4 +1,5 @@
 @import "fonts.css";
+
 :root {
     --fa-primary-color: rgb(83, 83, 83);
     --fa-secondary-color: rgb(146, 146, 146);
@@ -10,110 +11,25 @@
     box-sizing: border-box;
 }
 
-header {
-    background-color: #1C4F40;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-
-.logo-img {
-    width: 30%;
-}
-
-.offcanvas-title {
-    font-weight: 900;
-}
-
-li {
+.menu-items {
     list-style-type: none;
-    margin: 1.5rem 0;
+    transition: all .4s ease;
 }
 
-footer li {
-    color: white;
-}
-
-.md-menu {
-    display: none;
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #2C2C2C;
-    border-radius: 50px 50px 0 0;
-    padding: 1rem;
-    position: relative;
-    color: rgb(202, 202, 202);
-    margin-top: 7rem;
-}
-
-.restname {
-    text-align: center;
-}
-
-.socials>i {
-    margin: .5rem;
-    font-size: 1.3rem;
-}
-
-footer>* {
-    margin-bottom: 3rem;
-}
-
-.info {
-    font-size: .8rem;
-}
-
-.namad {
-    background-color: wheat;
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    bottom: 0rem;
-    left: 0;
-    margin-bottom: 0;
-}
-
-
-/* tablet */
-
-@media only screen and (min-width:768px) {
-    .sm-buttons-container {
-        display: none;
-    }
-    .md-menu {
-        display: block;
-    }
-    .sm-menu {
-        display: none;
-    }
-    .menu * {
-        display: inline-block;
-        margin: .5rem;
-    }
-    .logo-img {
-        width: 20%;
-    }
-    .login-btn,
-    .fa-basket-shopping {
-        margin: 0 1rem;
-    }
+.menu-items:hover {
+    color: darkcyan !important;
 }
 
 .pointer-event {
     cursor: pointer;
 }
 
-
+body{
+    overflow-x: hidden;
+    width: 100vw;
+}
 /* ---------------------------- Home ------------------------------------ */
 
-main {
-    overflow: hidden;
-}
 
 .img_top {
     height: 20%;
@@ -209,10 +125,12 @@ main {
         position: absolute;
         width: 35% !important;
     }
+
     .gallery-under-row {
         position: absolute;
         width: 63.5%;
     }
+
     .img_gallery_under_tow {
         height: 19vh;
     }
