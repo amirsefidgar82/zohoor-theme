@@ -23,7 +23,9 @@
 .pointer-event {
     cursor: pointer;
 }
-
+.background{
+    background: #151616 url(../img/flower.png) top center no-repeat;
+}
 body{
     overflow-x: hidden;
     width: 100vw;
