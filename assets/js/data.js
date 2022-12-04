@@ -94,7 +94,7 @@ $(document).ready(function() {
         },
         "responsive": true,
         "onSelect": function() {
-            alert(` ${date.year}/${date.month}/${date.date}`);
+            // alert(`تاریخ انتخاب شده : ${date.year}/${date.month}/${date.date} ~ ${date.hour}:${date.minute}:${date.second}`);
         }
     });
 
