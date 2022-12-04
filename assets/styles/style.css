@@ -210,8 +210,7 @@ main {
         width: 35% !important;
     }
     .gallery-under-row {
-        position: absolute;
-        width: 63.5%;
+        width: 207%;
     }
     .img_gallery_under_tow {
         height: 19vh;
