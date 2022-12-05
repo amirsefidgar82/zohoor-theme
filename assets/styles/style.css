@@ -104,7 +104,7 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-    height: 110px;
+    height: 16vh;
     position: relative;
     display: block;
     left: 0%;
@@ -124,12 +124,12 @@
 
 @media only screen and (min-width:576px) {
     .img_under_gallery {
-        left: 20%;
+        left: 27%;
         position: absolute;
         width: 35% !important;
     }
     .gallery-under-row {
-        width: 207%;
+        width: 218%;
     }
     .img_gallery_under_tow {
         height: 19vh;
@@ -140,5 +140,26 @@
     .imges_header_item {
         height: 23vh;
         width: 42% !important;
+    }
+}
+
+@media only screen and (min-width:830px) {
+    .gallery-under-row {
+        width: 210%;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .gallery-under-row {
+        /* margin-top: 6rem !important; */
+    }
+    .img_under_gallery {
+        height: 16vh;
+    }
+    .img_around_gallery {
+        height: 33vh !important;
+    }
+    .img_around_gallery_res {
+        height: 38vh !important;
     }
 }
