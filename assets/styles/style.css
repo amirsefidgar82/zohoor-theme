@@ -1,5 +1,4 @@
 @import "fonts.css";
-
 :root {
     --fa-primary-color: rgb(83, 83, 83);
     --fa-secondary-color: rgb(146, 146, 146);
@@ -23,18 +22,26 @@
 .pointer-event {
     cursor: pointer;
 }
-.background{
+
+.background {
     background: #151616 url(../img/flower.png) top center no-repeat;
 }
-body{
+
+body {
     overflow-x: hidden;
     width: 100vw;
 }
+
+.img-ballon {
+    height: 35vh;
+    object-fit: cover;
+}
+
+
 /* ---------------------------- Home ------------------------------------ */
 
-
 .img_top {
-    height: 20%;
+    height: 20vh;
     border-radius: 30px;
     object-fit: cover;
 }
@@ -42,7 +49,6 @@ body{
 .imges_header_item {
     object-fit: cover;
     width: 46% !important;
-    /* width: 49.666%; */
 }
 
 .discription {
@@ -127,12 +133,17 @@ body{
         position: absolute;
         width: 35% !important;
     }
-
     .gallery-under-row {
         width: 207%;
     }
-
     .img_gallery_under_tow {
         height: 19vh;
+    }
+    .img_top {
+        height: 40vh;
+    }
+    .imges_header_item {
+        height: 23vh;
+        width: 42% !important;
     }
 }
