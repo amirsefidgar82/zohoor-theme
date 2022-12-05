@@ -4,6 +4,10 @@
     --fa-secondary-color: rgb(146, 146, 146);
 }
 
+body{
+    background-color: #151616 !important;
+}
+
 * {
     direction: rtl;
     font-family: iransans;
@@ -16,7 +20,7 @@
 }
 
 .menu-items:hover {
-    color: darkcyan !important;
+    color: #b38151 !important;
 }
 
 .pointer-event {
@@ -32,7 +36,34 @@
     object-fit: cover;
 }
 
+.text-first{
+    color: #183d34;
+}
+.text-second{
+    color: #b38151;
+}
+.text-third{
+    color: #8d3b46;
+}
+.text-forth{
+    color: #d4d2cd;
+}
+.bg-first{
+    background-color: #183d34;
+}
+.bg-second{
+    background-color: #b38151;
+}
+.bg-third{
+    background-color: #8d3b46;
+}
+.bg-forth{
+    background-color: #d4d2cd;
+}
 
+footer,header{
+    border-radius: 40px;
+}
 /* ---------------------------- Home ------------------------------------ */
 
 .img_top {
@@ -150,9 +181,9 @@
 }
 
 @media only screen and (min-width:1440px) {
-    .gallery-under-row {
+    /* .gallery-under-row { */
         /* margin-top: 6rem !important; */
-    }
+    /* } */
     .img_under_gallery {
         height: 16vh;
     }
