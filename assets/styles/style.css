@@ -13,7 +13,9 @@ body{
     font-family: iransans;
     box-sizing: border-box;
 }
-
+img{
+    object-fit: cover;
+}
 .menu-items {
     list-style-type: none;
     transition: all .4s ease;
@@ -45,8 +47,11 @@ body{
 .text-third{
     color: #8d3b46;
 }
+tr,td, th{
+    padding: 1rem;
+}
 .text-forth{
-    color: #d4d2cd;
+    color: #d4d2cd !important;
 }
 .bg-first{
     background-color: #183d34;
