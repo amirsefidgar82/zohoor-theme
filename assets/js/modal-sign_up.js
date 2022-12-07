@@ -14,7 +14,10 @@ function send_ponenumber() {
         error: function(data) {
             alert(data.responseJSON.error);
         }
+
+        
     });
+    document.getElementById("btn-hide").click();
 
     // add phonenumber to next modal to title phone number
     document.getElementById("form-code-titel-phone_number").innerText = $('#validation-phonenumber').val();
